@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'unsafe-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -73,10 +73,19 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+#DATABASES = {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+  #      'NAME': BASE_DIR / 'db.sqlite3',
+ #   }
+#}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'biblioteca',
+        'USER': 'root',
+        'PASSWORD': '128012',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 

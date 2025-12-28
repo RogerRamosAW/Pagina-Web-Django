@@ -5,16 +5,27 @@
 {% block contenido %}
 
 <div class="card">
-  <div class="card-header">Lista Libros</div>
+  <div class="card-header">
+    <a
+      name=""
+      id=""
+      class="btn btn-primary"
+      href="{% url 'crear' %}"
+      role="button"
+      >Agregar nuevo Libro</a
+    >
+    
+  </div>
   <div class="card-body">
     <h4 class="card-title">Libros</h4>
 
     <div class="table-responsive">
-      <table class="table table-primary">
+      <table class="table table-striped table-hover align-middle">
         <thead>
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Título</th>
+            <th scope="col">Imagen</th>
             <th scope="col">Descripción</th>
             <th scope="col">Acciones</th>
           </tr>
@@ -22,11 +33,29 @@
         <tbody>
           <tr class="">
             <td scope="row">1</td>
-            <td>Django for Beginners</td>
-            <td>Imagen.jpg</td>
-            <td>Libros que habla sobre el framework de Django</td>
-            <td>Editar | Eliminar</td>
+            <td >Django for Beginners</td>
+            <td >Imagen.jpg</td>
+            <td >Libros que habla sobre el framework de Django</td>
+            <td > <a
+              name=""
+              id=""
+              class="btn btn-info"
+              href="{% url 'editar' %}"
+              role="button"
+              >Editar</a
+            >
+            | 
+            <a
+              name=""
+              id=""
+              class="btn btn-danger"
+              href="{% url 'editar' %}"
+              role="button"
+              >Borrar</a
+            >
+            </td>
           </tr>
+
         </tbody>
       </table>
     </div>
